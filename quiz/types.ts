@@ -1,3 +1,19 @@
-import { Request } from 'express';
+import { Request } from "express";
 
-// define relevant types here
+/**
+ * Interface representing a user object
+ */
+export interface User {
+  id: number;
+  firstName: string;
+  lastName: string;
+  username: string;
+  email: string;
+}
+
+/**
+ * Interface extending Express Request to include user data
+ */
+export interface UserRequest extends Request {
+  users?: User[];
+}
